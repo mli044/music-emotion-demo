@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Listening Quiz · How Does Emotion Change Music?</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./quiz.css" />
+  </head>
+  <body>
+    <main class="page-shell quiz-page">
+      <nav class="quiz-nav">
+        <a href="./index.html"><span aria-hidden="true">←</span> Back to explore</a>
+        <span class="quiz-nav-mark"><i aria-hidden="true"></i> Listening Lab</span>
+      </nav>
+
+      <header class="quiz-hero">
+        <p class="eyebrow">Put your listening skills to the test</p>
+        <h1>Can You Hear<br class="title-break" /> the Emotion?</h1>
+        <p class="subtitle">
+          Explore three melodies. For each one, use its neutral version as a reference and identify three emotional performances.
+        </p>
+      </header>
+
+      <section class="reference-section">
+        <div class="reference-label">
+          <span class="reference-number" id="referenceNumber">01</span>
+          <div>
+            <p class="section-kicker">Your reference</p>
+            <h2 id="referenceHeading">Listen to the matching neutral melody</h2>
+          </div>
+        </div>
+
+        <div class="player-panel reference-player" id="referencePlayer" aria-label="Neutral reference player">
+          <button class="play-button" id="referencePlay" type="button" aria-label="Play Neutral reference">
+            <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.6v12.8L18 12 8 5.6Z" /></svg>
+            <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" /></svg>
+          </button>
+          <div class="player-main">
+            <div class="now-playing">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span id="referenceMelody">Melody 1 reference</span>
+              <strong>Neutral</strong>
+            </div>
+            <div class="timeline-row">
+              <span class="time" id="referenceCurrentTime">0:00</span>
+              <input class="range timeline" id="referenceTimeline" type="range" min="0" max="1000" value="0" aria-label="Neutral playback position" />
+              <span class="time" id="referenceDuration">0:00</span>
+            </div>
+          </div>
+          <div class="reference-badge">Replay anytime</div>
+          <audio id="referenceAudio" preload="metadata" src="./data/Audio/m01_Neutral.wav"></audio>
+        </div>
+      </section>
+
+      <section class="quiz-stage" id="quizStage">
+        <div class="quiz-progress-wrap">
+          <div class="quiz-progress-copy">
+            <span id="questionCounter">Melody 1 of 3 · Question 1 of 3</span>
+            <span id="scoreCounter">Overall 1 of 9 · 0 correct</span>
+          </div>
+          <div class="quiz-progress">
+            <span id="quizProgressFill"></span>
+          </div>
+        </div>
+
+        <div class="question-heading">
+          <div>
+            <p class="section-kicker">Mystery performance</p>
+            <h2>Which emotion do you hear?</h2>
+          </div>
+          <p>Listen closely to tempo, mode, articulation, and tone color.</p>
+        </div>
+
+        <div class="mystery-player" id="mysteryPlayer">
+          <button class="mystery-play" id="mysteryPlay" type="button" aria-label="Play mystery performance">
+            <span class="mystery-play-icon">
+              <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.6v12.8L18 12 8 5.6Z" /></svg>
+              <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" /></svg>
+            </span>
+            <span>
+              <small id="mysteryStatus">Ready to listen</small>
+              <strong>Play mystery clip</strong>
+            </span>
+          </button>
+          <div class="mystery-wave">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="mystery-time" id="mysteryTime">0:00</span>
+          <audio id="questionAudio" preload="metadata"></audio>
+        </div>
+
+        <div class="answer-prompt">Choose one answer</div>
+        <div class="answer-grid" id="answerGrid"></div>
+
+        <div class="feedback-panel" id="feedbackPanel" hidden>
+          <div class="feedback-icon" id="feedbackIcon" aria-hidden="true"></div>
+          <div class="feedback-copy">
+            <p class="feedback-label" id="feedbackLabel"></p>
+            <h3 id="feedbackTitle"></h3>
+            <p id="feedbackText"></p>
+          </div>
+          <button class="next-button" id="nextButton" type="button">
+            Next question <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="results-panel" id="resultsPanel" hidden>
+        <div class="result-orbit"><span id="resultScore">0/9</span></div>
+        <p class="section-kicker">Quiz complete</p>
+        <h2 id="resultTitle">Great listening!</h2>
+        <p id="resultMessage"></p>
+        <div class="result-review" id="resultReview"></div>
+        <form
+          class="results-submit"
+          id="resultsForm"
+          name="emotion-quiz-results"
+          method="POST"
+          data-netlify="true"
+        >
+          <input type="hidden" name="form-name" value="emotion-quiz-results" />
+          <input type="hidden" name="q01_stimulus_id" />
+          <input type="hidden" name="q01_expected" />
+          <input type="hidden" name="q01_selected" />
+          <input type="hidden" name="q01_correct" />
+          <input type="hidden" name="q02_stimulus_id" />
+          <input type="hidden" name="q02_expected" />
+          <input type="hidden" name="q02_selected" />
+          <input type="hidden" name="q02_correct" />
+          <input type="hidden" name="q03_stimulus_id" />
+          <input type="hidden" name="q03_expected" />
+          <input type="hidden" name="q03_selected" />
+          <input type="hidden" name="q03_correct" />
+          <input type="hidden" name="q04_stimulus_id" />
+          <input type="hidden" name="q04_expected" />
+          <input type="hidden" name="q04_selected" />
+          <input type="hidden" name="q04_correct" />
+          <input type="hidden" name="q05_stimulus_id" />
+          <input type="hidden" name="q05_expected" />
+          <input type="hidden" name="q05_selected" />
+          <input type="hidden" name="q05_correct" />
+          <input type="hidden" name="q06_stimulus_id" />
+          <input type="hidden" name="q06_expected" />
+          <input type="hidden" name="q06_selected" />
+          <input type="hidden" name="q06_correct" />
+          <input type="hidden" name="q07_stimulus_id" />
+          <input type="hidden" name="q07_expected" />
+          <input type="hidden" name="q07_selected" />
+          <input type="hidden" name="q07_correct" />
+          <input type="hidden" name="q08_stimulus_id" />
+          <input type="hidden" name="q08_expected" />
+          <input type="hidden" name="q08_selected" />
+          <input type="hidden" name="q08_correct" />
+          <input type="hidden" name="q09_stimulus_id" />
+          <input type="hidden" name="q09_expected" />
+          <input type="hidden" name="q09_selected" />
+          <input type="hidden" name="q09_correct" />
+          <input type="hidden" name="question_count" />
+          <input type="hidden" name="total_correct" />
+          <input type="hidden" name="accuracy" />
+
+          <p class="submit-explanation">
+            Your anonymous results can help us understand how effectively musical changes communicate emotion. No personal information is collected.
+          </p>
+          <button class="submit-results-button" id="submitResultsButton" type="submit">
+            Submit results <span aria-hidden="true">→</span>
+          </button>
+          <p class="submit-status" id="submitStatus"></p>
+        </form>
+        <div class="result-actions">
+          <button class="restart-button" id="restartButton" type="button">Try again <span aria-hidden="true">↻</span></button>
+          <a class="review-link" href="./index.html">Review the emotion guide</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="./quiz.js"></script>
+  </body>
+</html>

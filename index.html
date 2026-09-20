@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>How Does Emotion Change Music?</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="site-mark" href="#top" aria-label="Music and emotion home">
+          <span aria-hidden="true">♪</span>
+          Music &amp; Emotion
+        </a>
+        <a class="top-quiz-link" href="./quiz.html">
+          Take the Quiz
+          <span aria-hidden="true">→</span>
+        </a>
+      </nav>
+
+      <header class="hero" id="top">
+        <p class="eyebrow">An interactive listening experiment</p>
+        <h1>How Does Emotion<br class="title-break" /> Change Music?</h1>
+        <p class="subtitle">Click an emotion and hear how the same melody changes.</p>
+      </header>
+
+      <section class="player-panel" aria-label="Audio player">
+        <button class="play-button" id="playButton" type="button" aria-label="Play Neutral">
+          <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 5.6v12.8L18 12 8 5.6Z" />
+          </svg>
+          <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 5h4v14H7zM13 5h4v14h-4z" />
+          </svg>
+        </button>
+
+        <div class="player-main">
+          <div class="now-playing">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Now playing</span>
+            <strong id="currentEmotion">Neutral</strong>
+          </div>
+          <div class="timeline-row">
+            <span class="time" id="currentTime">0:00</span>
+            <input
+              class="range timeline"
+              id="timeline"
+              type="range"
+              min="0"
+              max="1000"
+              value="0"
+              aria-label="Playback position"
+            />
+            <span class="time" id="duration">0:00</span>
+          </div>
+        </div>
+
+        <div class="volume-control">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 9v6h4l5 4V5L8 9H4Zm11.5-.5a5 5 0 0 1 0 7M18 6a8.5 8.5 0 0 1 0 12" />
+          </svg>
+          <input
+            class="range volume"
+            id="volume"
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.8"
+            aria-label="Volume"
+          />
+        </div>
+        <audio id="audio" preload="metadata" src="./data/Audio/Neutral.wav"></audio>
+      </section>
+
+      <section class="emotion-section" aria-labelledby="emotionHeading">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Four emotional directions</p>
+            <h2 id="emotionHeading">Choose how the melody should feel</h2>
+          </div>
+          <p class="section-hint"><span aria-hidden="true">↗</span> Select a card to listen and explore</p>
+        </div>
+        <div class="emotion-grid" id="emotionGrid">
+          <button class="emotion-card anxious" type="button" data-emotion="anxious" data-name="Anxious" data-audio="./data/Audio/Anxious.wav">
+            <span class="card-inner">
+              <span class="card-face card-front">
+                <span class="card-topline">
+                  <span class="emotion-icon"><svg viewBox="0 0 32 32"><path d="M3 17h5l3-7 5 14 4-10 3 5h6"/><path d="M16 28C8 23 4 18 4 12a7 7 0 0 1 12-5 7 7 0 0 1 12 5c0 6-4 11-12 16Z"/></svg></span>
+                  <span class="quadrant-label">Negative · High energy</span>
+                </span>
+                <span class="front-copy">
+                  <span class="emotion-name">Anxious</span>
+                  <span class="emotion-direction">Tense and unstable</span>
+                  <span class="emotion-summary">High energy with a negative emotional pull.</span>
+                </span>
+                <span class="explore-label">Listen &amp; explore →</span>
+                <span class="landscape"><span class="landscape-line"></span></span>
+              </span>
+              <span class="card-face card-back">
+                <span class="back-intro">
+                  <span>
+                    <span class="playing-pill">Selected</span>
+                    <span class="emotion-name">Anxious</span>
+                    <span class="emotion-direction">Tense and unstable</span>
+                  </span>
+                  <span>
+                    <span class="back-title">What changed?</span>
+                    <span class="change-list">
+                      <span>Faster pulse</span><span>Minor mode</span><span>Irregular rhythm</span><span>Sharper accents</span>
+                    </span>
+                  </span>
+                </span>
+                <span class="back-explanation">
+                  <span class="back-title">Why it sounds this way</span>
+                  <p>Anxiety carries energy without ease. A quicker pulse, darker mode, compressed rhythm, and sharper attacks can make the melody feel urgent and unsettled.</p>
+                </span>
+                <span class="music-dna">
+                  <span class="back-title">Music DNA</span>
+                  <span class="dna-note">Illustrative profile</span>
+                  <span class="dna-list">
+                    <span class="dna-row"><span class="dna-label">Tempo</span><span class="stars">★★★☆☆</span></span>
+                    <span class="dna-row"><span class="dna-label">Brightness</span><span class="stars">★★☆☆☆</span></span>
+                    <span class="dna-row"><span class="dna-label">Note density</span><span class="stars">★★★☆☆</span></span>
+                    <span class="dna-row"><span class="dna-label">Dynamics</span><span class="stars">★★★★☆</span></span>
+                    <span class="dna-row"><span class="dna-label">Stability</span><span class="stars">★★★☆☆</span></span>
+                  </span>
+                </span>
+              </span>
+            </span>
+          </button>
+
+          <button class="emotion-card excited" type="button" data-emotion="excited" data-name="Excited" data-audio="./data/Audio/Excited.wav">
+            <span class="card-inner">
+              <span class="card-face card-front">
+                <span class="card-topline"><span class="emotion-icon"><svg viewBox="0 0 32 32"><path d="M16 3v4M16 25v4M3 16h4M25 16h4M6.8 6.8l2.8 2.8M22.4 22.4l2.8 2.8M25.2 6.8l-2.8 2.8M9.6 22.4l-2.8 2.8"/><circle cx="16" cy="16" r="7"/><path d="M12 16c1.2 1.3 2.5 2 4 2s2.8-.7 4-2"/></svg></span><span class="quadrant-label">Positive · High energy</span></span>
+                <span class="front-copy"><span class="emotion-name">Excited</span><span class="emotion-direction">Bright and energetic</span><span class="emotion-summary">High energy with a positive emotional lift.</span></span>
+                <span class="explore-label">Listen &amp; explore →</span>
+                <span class="landscape"><span class="landscape-line"></span></span>
+              </span>
+              <span class="card-face card-back">
+                <span class="back-intro">
+                  <span><span class="playing-pill">Selected</span><span class="emotion-name">Excited</span><span class="emotion-direction">Bright and energetic</span></span>
+                  <span><span class="back-title">What changed?</span><span class="change-list"><span>Faster tempo</span><span>Major mode</span><span>Brighter tone</span><span>More motion</span></span></span>
+                </span>
+                <span class="back-explanation"><span class="back-title">Why it sounds this way</span><p>Excitement feels active and forward-moving. Faster tempo, bright tone, strong rhythm, and denser notes give the melody momentum and an uplifting sense of motion.</p></span>
+                <span class="music-dna"><span class="back-title">Music DNA</span><span class="dna-note">Illustrative profile</span><span class="dna-list">
+                  <span class="dna-row"><span class="dna-label">Tempo</span><span class="stars">★★★★☆</span></span>
+                  <span class="dna-row"><span class="dna-label">Brightness</span><span class="stars">★★★★★</span></span>
+                  <span class="dna-row"><span class="dna-label">Note density</span><span class="stars">★★★★☆</span></span>
+                  <span class="dna-row"><span class="dna-label">Dynamics</span><span class="stars">★★★★★</span></span>
+                  <span class="dna-row"><span class="dna-label">Stability</span><span class="stars">★★★★☆</span></span>
+                </span></span>
+              </span>
+            </span>
+          </button>
+
+          <button class="emotion-card happy" type="button" data-emotion="happy" data-name="Happy" data-audio="./data/Audio/Happy.wav">
+            <span class="card-inner">
+              <span class="card-face card-front">
+                <span class="card-topline"><span class="emotion-icon"><svg viewBox="0 0 32 32"><path d="M27 5C15 6 8 12 8 21c0 4 3 6 6 6 8 0 13-10 13-22Z"/><path d="M5 28c4-7 9-12 17-17M14 22c0-3-.5-5-2-7M18 17c2 0 4 .5 5 1"/></svg></span><span class="quadrant-label">Positive · Moderate energy</span></span>
+                <span class="front-copy"><span class="emotion-name">Happy</span><span class="emotion-direction">Bright and lively</span><span class="emotion-summary">Positive emotion with lively, playful movement.</span></span>
+                <span class="explore-label">Listen &amp; explore →</span>
+                <span class="landscape"><span class="landscape-line"></span></span>
+              </span>
+              <span class="card-face card-back">
+                <span class="back-intro">
+                  <span><span class="playing-pill">Selected</span><span class="emotion-name">Happy</span><span class="emotion-direction">Bright and lively</span></span>
+                  <span><span class="back-title">What changed?</span><span class="change-list"><span>Slightly faster tempo</span><span>Brighter tone</span><span>More staccato</span><span>Lively movement</span></span></span>
+                </span>
+                <span class="back-explanation"><span class="back-title">Why it sounds this way</span><p>Happiness feels bright, playful, and forward-moving. A slightly faster tempo, lively tone, and more staccato notes give the melody a light sense of bounce.</p></span>
+                <span class="music-dna"><span class="back-title">Music DNA</span><span class="dna-note">Illustrative profile</span><span class="dna-list">
+                  <span class="dna-row"><span class="dna-label">Tempo</span><span class="stars">★★★★★</span></span>
+                  <span class="dna-row"><span class="dna-label">Brightness</span><span class="stars">★★★★★</span></span>
+                  <span class="dna-row"><span class="dna-label">Note density</span><span class="stars">★★★★☆</span></span>
+                  <span class="dna-row"><span class="dna-label">Dynamics</span><span class="stars">★★★☆☆</span></span>
+                  <span class="dna-row"><span class="dna-label">Stability</span><span class="stars">★★★★☆</span></span>
+                </span></span>
+              </span>
+            </span>
+          </button>
+
+          <button class="emotion-card sad" type="button" data-emotion="sad" data-name="Sad" data-audio="./data/Audio/Sad.wav">
+            <span class="card-inner">
+              <span class="card-face card-front">
+                <span class="card-topline"><span class="emotion-icon"><svg viewBox="0 0 32 32"><path d="M9 21h15a6 6 0 0 0 0-12 9 9 0 0 0-17 3 5 5 0 0 0 2 9Z"/><path d="M11 25l-1 3M17 25l-1 3M23 25l-1 3"/></svg></span><span class="quadrant-label">Negative · Low energy</span></span>
+                <span class="front-copy"><span class="emotion-name">Sad</span><span class="emotion-direction">Slow and reflective</span><span class="emotion-summary">Low energy with a negative emotional weight.</span></span>
+                <span class="explore-label">Listen &amp; explore →</span>
+                <span class="landscape"><span class="landscape-line"></span></span>
+              </span>
+              <span class="card-face card-back">
+                <span class="back-intro">
+                  <span><span class="playing-pill">Selected</span><span class="emotion-name">Sad</span><span class="emotion-direction">Slow and reflective</span></span>
+                  <span><span class="back-title">What changed?</span><span class="change-list"><span>Slower tempo</span><span>Minor mode</span><span>Fewer notes</span><span>Darker tone</span></span></span>
+                </span>
+                <span class="back-explanation"><span class="back-title">Why it sounds this way</span><p>Sadness often lowers the energy of a performance. Slower tempo, sustained notes, softer dynamics, and darker tone create more space for the melody to feel reflective.</p></span>
+                <span class="music-dna"><span class="back-title">Music DNA</span><span class="dna-note">Illustrative profile</span><span class="dna-list">
+                  <span class="dna-row"><span class="dna-label">Tempo</span><span class="stars">★☆☆☆☆</span></span>
+                  <span class="dna-row"><span class="dna-label">Brightness</span><span class="stars">★☆☆☆☆</span></span>
+                  <span class="dna-row"><span class="dna-label">Note density</span><span class="stars">★★☆☆☆</span></span>
+                  <span class="dna-row"><span class="dna-label">Dynamics</span><span class="stars">★★☆☆☆</span></span>
+                  <span class="dna-row"><span class="dna-label">Stability</span><span class="stars">★★★★☆</span></span>
+                </span></span>
+              </span>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <section class="about-panel" aria-labelledby="aboutHeading">
+        <div class="about-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M9 18V5l10-2v13" />
+            <circle cx="6" cy="18" r="3" />
+            <circle cx="16" cy="16" r="3" />
+          </svg>
+        </div>
+        <div>
+          <p class="section-kicker">About this demo</p>
+          <h2 id="aboutHeading">The notes stay familiar. The feeling changes.</h2>
+          <p>
+            The same melody is performed in four emotional styles. Changes in tempo, mode,
+            dynamics, articulation, note density, and tone color can transform what we hear.
+          </p>
+        </div>
+        <div class="axis-key" aria-label="Emotion model key">
+          <span><i class="axis-dot positive"></i> Positive</span>
+          <span><i class="axis-dot negative"></i> Negative</span>
+          <span><i class="axis-dot energy"></i> Energy</span>
+          <span><i class="axis-dot calm"></i> Calm</span>
+        </div>
+      </section>
+
+      <section class="quiz-invite" aria-labelledby="quizInviteHeading">
+        <div class="quiz-invite-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <path d="M7 18v-3a9 9 0 0 1 18 0v3" />
+            <path d="M7 17H5a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h4v-9H7ZM25 17h2a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-4v-9h2Z" />
+            <path d="M16 8V4M13 5h6" />
+          </svg>
+        </div>
+        <div class="quiz-invite-copy">
+          <p class="section-kicker">Listening challenge</p>
+          <h2 id="quizInviteHeading">Ready to test what you heard?</h2>
+          <p>Use the musical clues you explored above to identify the emotion behind each mystery performance.</p>
+          <div class="quiz-meta" aria-label="Quiz details">
+            <span>3 melodies</span>
+            <span>9 questions</span>
+            <span>About 3 minutes</span>
+          </div>
+        </div>
+        <a class="quiz-link" href="./quiz.html">
+          Start the Listening Quiz
+          <span aria-hidden="true">→</span>
+        </a>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
