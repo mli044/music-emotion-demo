@@ -72,4 +72,6 @@ CSS media queries adjust the layout for desktop computers, projectors, tablets, 
 
 ## Publishing
 
-Upload the entire `simple-version` folder to Netlify. Keep the folder structure unchanged so the HTML, CSS, JavaScript, and audio paths continue to work. After deployment, enable Netlify's form detection and confirm that the Quiz result form appears in the site's Forms section.
+Access the website through the link below:
+
+[http://cadenzaworks.com](http://cadenzaworks.com)
