@@ -42,6 +42,13 @@ button {
   padding: 72px 0 56px;
 }
 
+.site-footer {
+  padding: 0 20px 28px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
 .main-nav {
   display: flex;
   align-items: center;
