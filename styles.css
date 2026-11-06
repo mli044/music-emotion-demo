@@ -43,6 +43,8 @@ button {
 }
 
 .site-footer {
+  display: grid;
+  gap: 5px;
   padding: 0 20px 28px;
   color: var(--muted);
   font-size: 0.75rem;
